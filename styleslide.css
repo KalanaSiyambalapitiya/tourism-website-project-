@@ -1,0 +1,114 @@
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+     /* text-align:center; */
+   /* background-color:#f2f2f2; */
+   
+}
+
+/* Slideshow container */
+.slideshow-container{
+    position: relative;
+    width:100%;
+    max-width:100%;
+    margin:auto;
+    overflow:hidden;
+    
+}
+
+/* Each slide */
+.slide{
+    display:none;
+    width:100%;
+    position:relative;
+    opacity:0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Active slide */
+.slide.active{
+    display:block;
+    opacity:1;
+}
+
+/* Images - maintain aspect ratio */
+.slide img{
+    width:100%;
+    height:auto;
+    display:block;
+    object-fit:contain;
+    margin:auto;
+}
+
+/* Slide text overlay */
+.slide-text{
+    position:absolute;
+    bottom:30px;
+    left:50%;
+    transform:translateX(-50%);
+    color:white;
+    background-color: rgba(0,0,0,0.5);
+    padding:10px 20px;
+    font-size: 18px;
+}
+
+/* Arrows */
+.prev, .next{
+    cursor:pointer;
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    padding:16px;
+    color:white;
+    font-weight:bold;
+    font-size:20px;
+    border-radius:3px;
+    user-select:none;
+    background-color: rgba(0,0,0,0.5);
+    transition:0.3s;
+    z-index:10; /* ensure arrows are above slides */
+}
+
+.prev{ left:10px; }
+.next{ right:10px; }
+
+.prev:hover, .next:hover{
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Dots */
+.dot-container{
+    text-align:center;
+    padding:10px 0;
+    /* background:#f2f2f2; */
+    background: rgba(5, 15, 4, 0.2);
+    backdrop-filter: blur(50px);
+}
+
+.dot{
+    cursor:pointer;
+    height:15px;
+    width:15px;
+    margin:0 5px;
+    background-color:#dfdcdc;
+    border-radius:50%;
+    display:inline-block;
+    transition: background-color 0.3s;
+}
+
+.active, .dot:hover{
+    background-color:#717171;
+}
+
+/* Mobile adjustments */
+@media (max-width:768px){
+    .slide-text{
+        font-size:14px;
+        padding:8px 15px;
+        bottom: 5px;
+    }
+    .prev, .next{
+        font-size:16px;
+        padding:12px;
+    }
+}
